@@ -62,8 +62,16 @@ th,td{font-size:14px;text-align:center;}
               <!-- USERS LIST -->
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">User List</h3>
-					
+                  <h3 class="box-title">Factory Info</h3>
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<?php /*?><?php if($responce = $this->session->flashdata('Successfully')): ?>
+								<div class="text-center">
+									<div class="alert alert-success text-center"><?php echo $responce;?></div>
+								</div>
+							<?php endif;?><?php */?>
+						</div>
+					</div>
               
                 </div>
                 <!-- /.box-header -->
@@ -71,27 +79,23 @@ th,td{font-size:14px;text-align:center;}
              	<table id="tableData" class="table table-hover table-bordered">
               <thead style="background:#91b9e6;">
                 <tr>
-                  <th>SL</th>
-                  <th>Unit</th>
+                  
                   <th>ID</th>
                   <th>Name</th>
-                  <th>User Type</th>
-        
-                  
+                  <th>Address</th>
+                  <th>Edit</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php 
-				$i=1;
-				foreach($ul as $row)
+                <?php foreach($fl as $row)
 				{ ?>
                 <tr>
                   
-                  <td style="vertical-align:middle;"><?php echo $i++;?></td>
                   <td style="vertical-align:middle;"><?php echo $row['factoryid'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['userid'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['name'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['usertype'];?></td>
+                 
+                  <td style="vertical-align:middle;"><?php echo $row['factoryname'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['factory_address'];?></td>
+                  <td style="vertical-align:middle;"><a href="<?php echo base_url();?>Dashboard/factory_list_up/<?php echo $bn=$row['factoryid'];?>"><i class="fa fa-edit" style="font-size:24px"></i></a></td>
                   
                 </tr>
                 </tbody>
@@ -101,7 +105,11 @@ th,td{font-size:14px;text-align:center;}
             
             <!-- /.box-body -->
           </div>
-          
+          <script type="text/javascript">
+            $(document).ready(function() {
+                $('#tableData').paging({limit:50});
+            });
+        </script>
                 
                 <!-- /.box-footer -->
               </div>

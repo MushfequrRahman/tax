@@ -64,20 +64,23 @@ div.scrollable-table-wrapper {
               	<thead style="background:#91b9e6;position: sticky;top: 0;">
                 <tr>
                   <th>SL</th>
-                  <th>Image</th>
+                  
                   <th>Factory</th>
                   <th>User ID</th>
                   <th>Name</th>
+                  <th>Department</th>
                   <th>Designation</th>
-                  <th>NID</th>
+                  <th>Mobile</th>
+                  <th>Email</th>
                   <th>Tin Number</th>
                   <th>Tax Circle</th>
                   <th>Tax Zone</th>
                   <th>Return Number</th>
-                  <th>Challan Number</th>
+                  
                   <th>Date</th>
                   <th>Fiscal Year</th>
-                  <th>Edit</th>
+                  <th>Remarks</th>
+                  <!--<th>Edit</th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -87,14 +90,16 @@ div.scrollable-table-wrapper {
 				{ ?>
                 <tr>
                   <td style="vertical-align:middle;"><?php echo $i++;?></td>
-                  <?php /*?><td><img class="profile-user-img img-responsive img-thumbnail" src="<?php echo base_url().'assets/uploads/employee/'.$row['image'];?>" alt="User profile picture"></td><?php */?>
-                  <td style="vertical-align:middle;"><img class="profile-user-img img-responsive img-thumbnail" src="<?php echo base_url().'assets/uploads/users/'.$row['image'];?>" alt="User profile picture"></td>
                  
-                  <td style="vertical-align:middle;"><?php echo $row['factoryid'];?></td>
+                  
+                 
+                  <td style="vertical-align:middle;"><?php echo $row['fid'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['userid'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['ename'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['echilddesignation'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['nid'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['name'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['department'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['designation'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['mobile'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['email'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['tin'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['tc'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['tz'];?></td>
@@ -112,20 +117,7 @@ div.scrollable-table-wrapper {
                     <?php
 					}
 					?>
-                     <?php 
-				  	if($row['cfile']!='')
-					{
-						?>
-                  <td style="vertical-align:middle;"><img style="width:300px; height:300px;" src="<?php echo base_url().'assets/uploads/income_tax/'.$row['cfile'];?>" alt="Challan File"><br/><strong><?php echo $row['cnumber'];?></strong></td>
-                  <?php
-					}
-					else
-					{
-					?>
-                    <td style="vertical-align:middle;">No File<br/><strong><?php echo $row['cnumber'];?></strong></td>
-                    <?php
-					}
-					?>
+                     
                    <?php 
 				   if($row['sdate']=='0000-00-00')
 				   {
@@ -141,7 +133,8 @@ div.scrollable-table-wrapper {
 				   }
 				   ?>
                   <td style="vertical-align:middle;"><?php echo $row['fyear'];?></td>
-                  <td style="vertical-align:middle;"><a href="<?php echo base_url();?>Dashboard/incometax_list_up/<?php echo $bn=$row['itid'];?>"><i class="fa fa-edit" style="font-size:22px"></i></a></td>
+                  <td style="vertical-align:middle;"><?php echo $row['remarks'];?></td>
+                  <?php /*?><td style="vertical-align:middle;"><a href="<?php echo base_url();?>Dashboard/incometax_list_up/<?php echo $bn=$row['itid'];?>"><i class="fa fa-edit" style="font-size:22px"></i></a></td><?php */?>
                 </tr>
                 </tbody>
                <?php } ?>

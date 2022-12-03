@@ -98,7 +98,6 @@
     margin-top: 8%;
     margin-bottom: -15%;
     color: #495057;
-	font-variant: petite-caps;
 }
 .error {
 		color: red;
@@ -166,55 +165,55 @@
 										<?php echo form_error('tid', '<div class="error">', '</div>');  ?>
 									</div>
 									<div class="form-group">
-										<label>Employee ID<em>*</em></label>
-										<input type="text" class="form-control" name="userid" value="<?php echo set_value('userid'); ?>" placeholder="Mentioned Your Office ID Card">
+										<label>User ID(Mentioned Your Office ID Card)<em>*</em></label>
+										<input type="text" class="form-control" name="userid" placeholder="User ID">
 										<?php echo form_error('userid', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
-										<label>Employee Name<em>*</em></label>
-										<input type="text" class="form-control" name="name" value="<?php echo set_value('name'); ?>" placeholder="Mentioned Your Office ID Card">
+										<label>User Name(Mentioned Your Office ID Card)<em>*</em></label>
+										<input type="text" class="form-control" name="name" placeholder="User Name">
 										<?php echo form_error('name', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
-										<label>Department<em>*</em></label>
-										<input type="text" class="form-control" name="dept" value="<?php echo set_value('dept'); ?>" placeholder="Mentioned Your Office ID Card">
+										<label>Department(Mentioned Your Office ID Card)<em>*</em></label>
+										<input type="text" class="form-control" name="dept" placeholder="Department">
 										<?php echo form_error('dept', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
-										<label>Designation<em>*</em></label>
-										<input type="text" class="form-control" name="desig" value="<?php echo set_value('desig'); ?>" placeholder="Mentioned Your Office ID Card">
+										<label>Designation(Mentioned Your Office ID Card)<em>*</em></label>
+										<input type="text" class="form-control" name="desig" placeholder="Designation">
 										<?php echo form_error('desig', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
-										<label>Mobile<em>*</em></label>
-										<input type="text" class="form-control" name="mobile" value="<?php echo set_value('mobile'); ?>" placeholder="11 Digit">
+										<label>Mobile(11 Digit)<em>*</em></label>
+										<input type="text" class="form-control" name="mobile" placeholder="Mobile">
 										<?php echo form_error('mobile', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
 										<label>Office Email<em>*</em></label>
-										<input type="text" class="form-control" name="oemail" value="<?php echo set_value('oemail'); ?>">
+										<input type="text" class="form-control" name="oemail" placeholder="Office Email">
 										<?php echo form_error('oemail', '<div class="error">', '</div>');  ?>
 									</div>
                                     </div>
                                     <div class="col-md-6">
                                     <div class="form-group">
 										<label>TIN Number<em>*</em></label>
-										<input type="text" class="form-control" name="tin" value="<?php echo set_value('tin'); ?>">
+										<input type="text" class="form-control" name="tin" placeholder="TIN Number">
 										<?php echo form_error('tin', '<div class="error">', '</div>');  ?>
 									</div>
 									<div class="form-group">
 										<label>Tax Circle<em>*</em></label>
-										<input type="text" class="form-control" name="tc" value="<?php echo set_value('tc'); ?>">
+										<input type="text" class="form-control" name="tc" placeholder="Tax Circle">
 										<?php echo form_error('tc', '<div class="error">', '</div>');  ?>
 									</div>
 									<div class="form-group">
 										<label>Tax Zone<em>*</em></label>
-										<input type="text" class="form-control" name="tz" value="<?php echo set_value('tz'); ?>">
+										<input type="text" class="form-control" name="tz" placeholder="Tax Zone">
 										<?php echo form_error('tz', '<div class="error">', '</div>');  ?>
 									</div>
 									<div class="form-group">
 										<label>Return Number<em>*</em></label>
-										<input type="text" class="form-control" name="rnumber" value="<?php echo set_value('rnumber'); ?>">
+										<input type="text" class="form-control" name="rnumber" placeholder="Return Number">
 										<?php echo form_error('rnumber', '<div class="error">', '</div>');  ?>
 									</div>
 									<?php /*?><div class="form-group">
@@ -235,12 +234,12 @@
 										</select>
 									</div>
                                     <div class="form-group">
-										<label>Remarks</label>
+										<label>Remarks<em>*</em></label>
 										<textarea class="form-control" rows="5" name="remarks" id="remarks"></textarea>
 										<?php echo form_error('remarks', '<div class="error">', '</div>');  ?>
 									</div>
 									<div class="form-group">
-										<label for="employeefile1">Return Documents(jpeg | jpg | png)<em>*</em></label>
+										<label for="employeefile1">Return Documents(jpeg | jpg | png)</label>
 										<input type="file" name="rfile">
                                         <?php echo form_error('rfile', '<div class="error">', '</div>');  ?>
 									</div>

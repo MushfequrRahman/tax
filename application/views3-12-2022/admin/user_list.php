@@ -38,7 +38,7 @@ $(function () {
               <!-- USERS LIST -->
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Income Tax List</h3>
+                  <h3 class="box-title">User List</h3>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
 							<?php if($responce = $this->session->flashdata('Successfully')): ?>
@@ -68,21 +68,6 @@ $(function () {
 					?>
                     </select>
                     <?php echo form_error('factoryid', '<div class="error">', '</div>');  ?>
-				</div>
-                <div class="form-group">
-					<label>Fiscal Year<em>*</em></label>
-					<select class="form-control" name="fyear" id="fyear">
-                    	<option value="">Select....</option>
-                        <?php
-						foreach($fil as $row)
-						{
-					?>
-                    		<option value="<?php echo $row['dfyear'];?>"><?php echo $row['dfyear'];?></option>
-                    <?php
-						}
-					?>
-                    </select>
-                    <?php echo form_error('fyear', '<div class="error">', '</div>');  ?>
 				</div>
                </div>
                 <!-- /.box-body -->
@@ -122,14 +107,13 @@ $(function () {
         {
             event.preventDefault();
             var factoryid= $("#factoryid").val();
-			var fyear= $("#fyear").val();
 
             $.ajax(
                 {
                     type:'post',
-                    url: '<?php echo base_url(); ?>Dashboard/factorywise_incometax_acclist',
+                    url: '<?php echo base_url(); ?>Dashboard/factorywise_user_list',
 					dataType:"text",
-                    data:{ factoryid:factoryid,fyear:fyear},
+                    data:{ factoryid:factoryid},
 					      success: function(data) 
 						  	{
        					  		$('#ajax-content-container').html(data);

@@ -69,6 +69,21 @@ $(function () {
                     </select>
                     <?php echo form_error('factoryid', '<div class="error">', '</div>');  ?>
 				</div>
+                <div class="form-group">
+					<label>Fiscal year<em>*</em></label>
+					<select class="form-control" name="fyear" id="fyear">
+                    	<option value="">Select....</option>
+                        <?php
+						foreach($fil as $row)
+						{
+					?>
+                    		<option value="<?php echo $row['dfyear'];?>"><?php echo $row['dfyear'];?></option>
+                    <?php
+						}
+					?>
+                    </select>
+                    <?php echo form_error('fyear', '<div class="error">', '</div>');  ?>
+				</div>
                </div>
                 <!-- /.box-body -->
                 <div class="box-footer text-center">
@@ -107,13 +122,14 @@ $(function () {
         {
             event.preventDefault();
             var factoryid= $("#factoryid").val();
+			var fyear= $("#fyear").val();
 
             $.ajax(
                 {
                     type:'post',
                     url: '<?php echo base_url(); ?>Dashboard/factorywise_incometax_list',
 					dataType:"text",
-                    data:{ factoryid:factoryid},
+                    data:{ factoryid:factoryid,fyear:fyear},
 					      success: function(data) 
 						  	{
        					  		$('#ajax-content-container').html(data);

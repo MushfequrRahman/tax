@@ -14,7 +14,7 @@ class User_Login extends CI_Controller {
 				{
 					$this->load->database();
 					$this->load->model('Login_Model');
-					$data['title']='Tax Return';
+					$data['title']='CONVEYANCE';
 					$this->load->view('admin/head',$data);
 					//$data['allf']=$this->Login_Model->factory_list();
 					$this->load->view('admin/login_form',$data);
@@ -51,7 +51,7 @@ class User_Login extends CI_Controller {
 					//$unit=$this->form_validation->set_rules('unit','Unit','required');
 					if($this->form_validation->run()==FALSE)
 						{
-							$data['title']='Tax Return';
+							$data['title']='CONVEYANCE';
 							$this->load->view('admin/head',$data);
 							$data['allf']=$this->Login_Model->factory_list();
 							$this->load->view('admin/login_form',$data);
@@ -87,7 +87,7 @@ class User_Login extends CI_Controller {
 						 	else
 								{
 									$this->session->set_flashdata('error', 'Invaluserid User ID and Password');
-									$data['title']='Tax Return';
+									$data['title']='CONVEYANCE';
 									$this->load->view('admin/head',$data);
 									//$data['allf']=$this->Login_Model->factory_list();
 									$this->load->view('admin/login_form',$data);

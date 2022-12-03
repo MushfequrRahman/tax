@@ -2,13 +2,7 @@
 .error{color:red;}
 em{color:red;}
 </style>
-<!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
-<script type="text/javascript">
-$(function () {
-    jQuery(".pd").datepicker({dateFormat: 'yy-mm-dd'});
-	jQuery(".wd").datepicker({dateFormat: 'dd-mm-yy'});
-	})
-</script> 
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -38,7 +32,7 @@ $(function () {
               <!-- USERS LIST -->
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Income Tax List</h3>
+                  <h3 class="box-title">Department Insert</h3>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
 							<?php if($responce = $this->session->flashdata('Successfully')): ?>
@@ -52,14 +46,13 @@ $(function () {
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body ">
-				 <?php /*?><form role="form" autocomplete="off" action="<?php echo base_url();?>Dashboard/user_task_complete_list" method="post" enctype="multipart/form-data"><?php */?>
-                 
-                	<div class="form-group">
+				 <form role="form" autocomplete="off" action="<?php echo base_url();?>Dashboard/department_insert" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
 					<label>Factory Name<em>*</em></label>
 					<select class="form-control" name="factoryid" id="factoryid">
                     	<option value="">Select....</option>
                         <?php
-						foreach($fl as $row)
+						foreach($allf as $row)
 						{
 					?>
                     		<option value="<?php echo $row['factoryid'];?>"><?php echo $row['factoryname'];?></option>
@@ -69,27 +62,46 @@ $(function () {
                     </select>
                     <?php echo form_error('factoryid', '<div class="error">', '</div>');  ?>
 				</div>
-                <div class="form-group">
-					<label>Fiscal Year<em>*</em></label>
-					<select class="form-control" name="fyear" id="fyear">
+                 <div class="form-group">
+					<label>Division<em>*</em></label>
+					<select class="form-control" name="divisionid" id="divisionid">
                     	<option value="">Select....</option>
-                        <?php
-						foreach($fil as $row)
-						{
-					?>
-                    		<option value="<?php echo $row['dfyear'];?>"><?php echo $row['dfyear'];?></option>
-                    <?php
-						}
-					?>
+                        
                     </select>
-                    <?php echo form_error('fyear', '<div class="error">', '</div>');  ?>
+                    <?php echo form_error('section', '<div class="error">', '</div>');  ?>
 				</div>
-               </div>
+				<div class="form-group">
+					<label>Department<em>*</em></label>
+					<input type="text" class="form-control" name="department" placeholder="Enter Department">
+                    <?php echo form_error('department', '<div class="error">', '</div>');  ?>
+				</div>
+                
+				
+				
+				
+                
+				
+				
+				
+
+				 
+				
+				
+                
+  
+               
+               
+    
+                
+
+             
+                  <!-- /.users-list -->
+                </div>
                 <!-- /.box-body -->
                 <div class="box-footer text-center">
-                  <input type="submit" class="btn btn-primary" name="submit" id="btn" value="Submit" />
+                  <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
                 </div>
-				 <!--</form>-->
+				 </form>
                 <!-- /.box-footer -->
               </div>
               <!--/.box -->
@@ -106,8 +118,6 @@ $(function () {
         <!-- /.col -->
       </div>
       <!-- /.row -->
-      <div id="ajax-content-container">
-        </div>
     </section>
     <!-- /.content -->
   </div>
@@ -116,34 +126,31 @@ $(function () {
   
 </div>
 <!-- ./wrapper -->
-<script>
-    $(document).ready(function(){
-        $( "#btn" ).click(function(event)
-        {
-            event.preventDefault();
-            var factoryid= $("#factoryid").val();
-			var fyear= $("#fyear").val();
+<script type="text/javascript">
+$(document).ready(function(){
 
-            $.ajax(
-                {
-                    type:'post',
-                    url: '<?php echo base_url(); ?>Dashboard/factorywise_incometax_acclist',
-					dataType:"text",
-                    data:{ factoryid:factoryid,fyear:fyear},
-					      success: function(data) 
-						  	{
-       					  		$('#ajax-content-container').html(data);
-								
-      						},
-	  					error: function(){
-    					alert('error!');
-  				}
-                    
-                });
-        });
-    });
+    $('#factoryid').change(function(event){
+        event.preventDefault();
+		var factoryid = $('#factoryid').val();
+
+        $.ajax({
+            type:'get',
+            url:"<?php echo base_url(); ?>Dashboard/show_divisionname",
+			dataType:"json",
+                    data:{ factoryid:factoryid},
+            success:function(res)
+            	{
+         		 	//$('#divisionid').find('option');
+					$('#divisionid').find('option').not(':first').remove();
+				 	// Add options
+          			$.each(res,function(index,data){
+				  	$('#divisionid').append('<option value="'+data['divisionid']+'">'+data['divisionname']+'</option>');
+          			});
+				}
+        	});
+    	});
+	});
 </script>
-
 
 </body>
 </html>

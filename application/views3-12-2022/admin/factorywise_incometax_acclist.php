@@ -66,12 +66,10 @@ div.scrollable-table-wrapper {
                   <th>SL</th>
                   <!--<th>Image</th>-->
                   <th>Factory</th>
-                  <th>User ID</th>
+                  <!--<th>User ID</th>-->
                   <th>Name</th>
-                  <th>Department</th>
                   <th>Designation</th>
-                  <th>Mobile</th>
-                  <th>Email</th>
+                  <!--<th>NID</th>-->
                   <th>Tin Number</th>
                   <th>Tax Circle</th>
                   <th>Tax Zone</th>
@@ -79,7 +77,6 @@ div.scrollable-table-wrapper {
                   <!--<th>Challan Number</th>-->
                   <th>Date</th>
                   <th>Fiscal Year</th>
-                  <th>Remarks</th>
                   <!--<th>Edit</th>-->
                 </tr>
                 </thead>
@@ -93,13 +90,11 @@ div.scrollable-table-wrapper {
                   <?php /*?><td><img class="profile-user-img img-responsive img-thumbnail" src="<?php echo base_url().'assets/uploads/employee/'.$row['image'];?>" alt="User profile picture"></td><?php */?>
                   <?php /*?><td style="vertical-align:middle;"><img class="profile-user-img img-responsive img-thumbnail" src="<?php echo base_url().'assets/uploads/users/'.$row['image'];?>" alt="User profile picture"></td><?php */?>
                  
-                  <td style="vertical-align:middle;"><?php echo $row['fid'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['userid'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['name'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['department'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['designation'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['mobile'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['email'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['factoryid'];?></td>
+                  <?php /*?><td style="vertical-align:middle;"><?php echo $row['userid'];?></td><?php */?>
+                  <td style="vertical-align:middle;"><?php echo $row['ename'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['echilddesignation'];?></td>
+                  <?php /*?><td style="vertical-align:middle;"><?php echo $row['nid'];?></td><?php */?>
                   <td style="vertical-align:middle;"><?php echo $row['tin'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['tc'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['tz'];?></td>
@@ -148,7 +143,6 @@ div.scrollable-table-wrapper {
 				   }
 				   ?>
                   <td style="vertical-align:middle;"><?php echo $row['fyear'];?></td>
-                  <td style="vertical-align:middle;"><?php echo $row['remarks'];?></td>
                   <?php /*?><td style="vertical-align:middle;"><a href="<?php echo base_url();?>Dashboard/incometax_list_up/<?php echo $bn=$row['itid'];?>"><i class="fa fa-edit" style="font-size:22px"></i></a></td><?php */?>
                 </tr>
                 </tbody>
