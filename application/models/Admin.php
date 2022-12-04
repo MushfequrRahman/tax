@@ -231,6 +231,7 @@ class Admin extends CI_Model {
 	public function factorywise_incometax_list($factoryid,$fyear)
 	{
 		$query="SELECT * FROM incometax_insert
+		JOIN type ON type.id=incometax_insert.type
 		WHERE fid='$factoryid' AND fyear='$fyear' ORDER BY userid";
 		$result=$this->db->query($query);
 		return $result->result_array();

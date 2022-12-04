@@ -98,7 +98,7 @@
     margin-top: 8%;
     margin-bottom: -15%;
     color: #495057;
-	font-variant: petite-caps;
+	/*font-variant: petite-caps;*/
 }
 .error {
 		color: red;
@@ -107,6 +107,17 @@
 	em {
 		color: red;
 	}
+	.blink {
+            animation: blinker 1.5s linear infinite;
+            color: red;
+            font-family: sans-serif;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+		marquee{font-size:16px; color:red;}
 </style>
 <script type="text/javascript">
 	$(function() {
@@ -127,6 +138,8 @@
                         <!--<input type="submit" name="" value="Login"/><br/>-->
                     </div>
                     <div class="col-md-9 register-right">
+                    	<marquee behavior="scroll" direction="left" scrolldelay="300">Submit Your Tax Return Info Before January-31,2023</marquee>
+
                     	<h3 class="register-heading">Submit Your Tax Return Info</h3>
                                 <div class="row register-form">
                                 <?php if ($responce = $this->session->flashdata('Successfully')) : ?>
@@ -134,8 +147,27 @@
 												<div class="alert alert-success text-center"><?php echo $responce; ?></div>
 											</div>
 										<?php endif; ?>
+                                        <?php if ($responce = $this->session->flashdata('Error')) : ?>
+											<div class="text-center">
+												<div class="alert alert-danger text-center"><?php echo $responce; ?></div>
+											</div>
+										<?php endif; ?>
                                 <form role="form" id="comment" autocomplete="off" action="<?php echo base_url(); ?>Home/incometax_insert" method="post" enctype="multipart/form-data">
                                     <div class="col-md-6">
+                                     <div class="form-group">
+										<label>Employment Type<em>*</em></label>
+										<select class="form-control" name="tid" id="tid">
+											<option value="">Select....</option>
+											<?php
+											foreach ($tl as $row) {
+											?>
+												<option value="<?php echo $row['id']; ?>"><?php echo $row['sname']; ?></option>
+											<?php
+											}
+											?>
+										</select>
+										<?php echo form_error('tid', '<div class="error">', '</div>');  ?>
+									</div>
                                         <div class="form-group">
 										<label>Unit<em>*</em></label>
 										<select class="form-control" name="fid" id="fid">
@@ -151,20 +183,7 @@
 										<?php echo form_error('fid', '<div class="error">', '</div>');  ?>
 									</div>
                                     
-                                        <div class="form-group">
-										<label>Type<em>*</em></label>
-										<select class="form-control" name="tid" id="tid">
-											<option value="">Select....</option>
-											<?php
-											foreach ($tl as $row) {
-											?>
-												<option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-											<?php
-											}
-											?>
-										</select>
-										<?php echo form_error('tid', '<div class="error">', '</div>');  ?>
-									</div>
+                                       
 									<div class="form-group">
 										<label>Employee ID<em>*</em></label>
 										<input type="text" class="form-control" name="userid" value="<?php echo set_value('userid'); ?>" placeholder="Mentioned Your Office ID Card">
@@ -191,7 +210,7 @@
 										<?php echo form_error('mobile', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
-										<label>Office Email<em>*</em></label>
+										<label>Office Email</label>
 										<input type="text" class="form-control" name="oemail" value="<?php echo set_value('oemail'); ?>">
 										<?php echo form_error('oemail', '<div class="error">', '</div>');  ?>
 									</div>

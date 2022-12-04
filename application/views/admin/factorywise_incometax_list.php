@@ -67,6 +67,7 @@ div.scrollable-table-wrapper {
                   
                   <th>Factory</th>
                   <th>User ID</th>
+                  <th>Type</th>
                   <th>Name</th>
                   <th>Department</th>
                   <th>Designation</th>
@@ -77,7 +78,7 @@ div.scrollable-table-wrapper {
                   <th>Tax Zone</th>
                   <th>Return Number</th>
                   
-                  <th>Date</th>
+                  <th>Submission Date</th>
                   <th>Fiscal Year</th>
                   <th>Remarks</th>
                   <!--<th>Edit</th>-->
@@ -95,6 +96,7 @@ div.scrollable-table-wrapper {
                  
                   <td style="vertical-align:middle;"><?php echo $row['fid'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['userid'];?></td>
+                  <td style="vertical-align:middle;"><?php echo $row['sname'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['name'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['department'];?></td>
                   <td style="vertical-align:middle;"><?php echo $row['designation'];?></td>

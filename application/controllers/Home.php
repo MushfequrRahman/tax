@@ -32,7 +32,7 @@ class Home extends CI_Controller {
 			$dept=$this->form_validation->set_rules('dept', 'Department', 'required');
 			$desig=$this->form_validation->set_rules('desig', 'Designation', 'required');
 			$mobile=$this->form_validation->set_rules('mobile', 'Mobile', 'required|regex_match[/^[0-9]{11}$/]');
-			$oemail=$this->form_validation->set_rules('oemail', 'Office Email', 'trim|required|valid_email');
+			//$oemail=$this->form_validation->set_rules('oemail', 'Office Email', 'trim|required|valid_email');
 			$tin=$this->form_validation->set_rules('tin', 'TIN', 'required');
 			$tc=$this->form_validation->set_rules('tc', 'Tax Circle', 'required');
 			$tz=$this->form_validation->set_rules('tz', 'Tax Zone', 'required');
@@ -89,13 +89,13 @@ class Home extends CI_Controller {
 							}
 						else
 							{
-								$this->session->set_flashdata('Successfully','Failed To Submitted');
+								$this->session->set_flashdata('Error','Failed To Submitted');
 							}
 						redirect('Home','refresh');                  
         			}
 					else
 					{
-         				 $this->session->set_flashdata('Successfully',$this->upload->display_errors());
+         				 $this->session->set_flashdata('Error',$this->upload->display_errors());
 						 $this->index();
 						 //redirect('Home','refresh');
 						 //print $this->upload->display_errors();
