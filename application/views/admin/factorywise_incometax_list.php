@@ -76,10 +76,9 @@ div.scrollable-table-wrapper {
                   <th>Tin Number</th>
                   <th>Tax Circle</th>
                   <th>Tax Zone</th>
-                  <th>Return Number</th>
-                  
+                  <th>Acknowledgment Slip Number</th>
                   <th>Submission Date</th>
-                  <th>Fiscal Year</th>
+                  <th>Assesment Year</th>
                   <th>Remarks</th>
                   <!--<th>Edit</th>-->
                 </tr>

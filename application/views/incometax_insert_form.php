@@ -138,7 +138,11 @@
                         <!--<input type="submit" name="" value="Login"/><br/>-->
                     </div>
                     <div class="col-md-9 register-right">
-                    	<marquee behavior="scroll" direction="left" scrolldelay="300">Submit Your Tax Return Info Before January-31,2023</marquee>
+                    	<div class="row">
+                    		<div class="col-sm-9 col-md-11 col-sm-offset-3 col-md-offset-1">
+                    			<marquee behavior="scroll" direction="left" scrolldelay="200">Submit Your Tax Return Info Before January-31,2023</marquee>
+                        	</div>
+                        </div>
 
                     	<h3 class="register-heading">Submit Your Tax Return Info</h3>
                                 <div class="row register-form">
@@ -232,7 +236,7 @@
 										<?php echo form_error('tz', '<div class="error">', '</div>');  ?>
 									</div>
 									<div class="form-group">
-										<label>Return Number<em>*</em></label>
+										<label>Acknowledgment Slip Number<em>*</em></label>
 										<input type="text" class="form-control" name="rnumber" value="<?php echo set_value('rnumber'); ?>">
 										<?php echo form_error('rnumber', '<div class="error">', '</div>');  ?>
 									</div>
@@ -247,7 +251,7 @@
 										<?php echo form_error('cnumber', '<div class="error">', '</div>');  ?>
 									</div><?php */?>
 									<div class="form-group">
-										<label>Fiscal Year</label>
+										<label>Assesment Year</label>
 										<select class="form-control" name="fyear" id="fyear">
 											<!--<option value="2020-2021">2020-2021</option>-->
 											<option value="2022-2023">2022-2023</option>
