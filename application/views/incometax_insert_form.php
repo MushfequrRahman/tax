@@ -1,7 +1,3 @@
-<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-<!------ Include the above in your HEAD tag ---------->
 <style>
 .register{
     /*background: -webkit-linear-gradient(left, #3931af, #00c6ff);*/
@@ -139,7 +135,7 @@
                     </div>
                     <div class="col-md-9 register-right">
                     	<div class="row">
-                    		<div class="col-sm-9 col-md-11 col-sm-offset-3 col-md-offset-1">
+                    		<div class="col-sm-9 col-md-11 col-xs-offset-1 col-md-offset-1">
                     			<marquee behavior="scroll" direction="left" scrolldelay="200">Submit Your Tax Return Info Before January-31,2023</marquee>
                         	</div>
                         </div>
