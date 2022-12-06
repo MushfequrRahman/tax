@@ -3,16 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Model {
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public function fac_insert($facid,$facname,$fac_address)
 	{
 		$sql="SELECT * FROM factory WHERE factoryid='$facid'";
@@ -58,33 +48,7 @@ class Admin extends CI_Model {
 		return $result->result_array();
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-   
-  public function usertype_insert($usertype)
+	public function usertype_insert($usertype)
 	{
 		$sql="SELECT * FROM usertype WHERE usertype='$usertype'";
 		$query=$this->db->query($sql);
@@ -119,9 +83,6 @@ class Admin extends CI_Model {
 		$sql="UPDATE usertype SET usertype='$usertype' WHERE usertypeid='$usertypeid'";
 		$query=$this->db->query($sql);
 	}
-	
-	
-	
 	public function user_insert($factoryid,$name,$usertypeid,$userid,$password)
 	{
 		
@@ -140,11 +101,6 @@ class Admin extends CI_Model {
 		return $result;
 		
 	}
-	
-	
-	
-	
-	
 	public function userstatus_insert($userstatus)
 	{
 		$sql="SELECT * FROM userstatus WHERE userstatus='$userstatus'";
@@ -180,23 +136,6 @@ class Admin extends CI_Model {
 		$sql="UPDATE userstatus SET userstatus='$userstatus' WHERE userstatusid='$userstatusid'";
 		$query=$this->db->query($sql);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-												
-	
-											
-
-	
-	
-	
-															
 	
 															/*****************INCOME TAX********************/
 															
@@ -251,6 +190,20 @@ class Admin extends CI_Model {
 //		$sql1="UPDATE incometax_insert SET tc='$tc',tz='$tz',rnumber='$rnumber',cnumber='$cnumber',sdate='$sdate' WHERE itid='$itid'";
 //		return $query=$this->db->query($sql1);
 //	}
+
+	public function factorywise_incometax_list_summary()
+	{
+		$query="SELECT fid,COUNT(fid) AS ti FROM incometax_insert WHERE fyear='2022-2023' GROUP BY fid";
+		$result=$this->db->query($query);
+		return $result->result_array();
+	}
+	public function typewise_incometax_list_summary()
+	{
+		$query="SELECT fid,sname,COUNT(type) AS ttype FROM incometax_insert
+		JOIN type ON type.id=incometax_insert.type WHERE fyear='2022-2023' GROUP BY type,fid";
+		$result=$this->db->query($query);
+		return $result->result_array();
+	}
 	
 														
 }

@@ -41,6 +41,8 @@ class Dashboard extends CI_Controller {
 		$factoryid=$this->session->userdata('factoryid');
 		$this->load->view('admin/toprightnav',$data);
 		$this->load->view('admin/leftmenu');
+		$data['ul']=$this->Admin->factorywise_incometax_list_summary();
+		$data['tl']=$this->Admin->typewise_incometax_list_summary();
 		$this->load->view('admin/dashboard',$data);
 	}
 	public function factory_insert_form()
