@@ -2,7 +2,7 @@
 .register{
     /*background: -webkit-linear-gradient(left, #3931af, #00c6ff);*/
 	background: -webkit-linear-gradient(left, #393, #00c6ff);
-    margin-top: 3%;
+    /*margin-top: 3%;*/
     padding: 3%;
 }
 .register-left{
