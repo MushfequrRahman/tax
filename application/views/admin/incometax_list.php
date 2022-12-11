@@ -54,7 +54,7 @@ $(function () {
                 <div class="box-body ">
 				 <?php /*?><form role="form" autocomplete="off" action="<?php echo base_url();?>Dashboard/user_task_complete_list" method="post" enctype="multipart/form-data"><?php */?>
                  
-                	<div class="form-group">
+                	<div class="col-sm-12 col-md-5 col-lg-5">
 					<label>Factory Name<em>*</em></label>
 					<select class="form-control" name="factoryid" id="factoryid">
                     	<option value="">Select....</option>
@@ -69,8 +69,8 @@ $(function () {
                     </select>
                     <?php echo form_error('factoryid', '<div class="error">', '</div>');  ?>
 				</div>
-                <div class="form-group">
-					<label>Fiscal year<em>*</em></label>
+                <div class="col-sm-12 col-md-5 col-lg-5">
+					<label>Assesment year<em>*</em></label>
 					<select class="form-control" name="fyear" id="fyear">
                     	<option value="">Select....</option>
                         <?php
@@ -84,10 +84,12 @@ $(function () {
                     </select>
                     <?php echo form_error('fyear', '<div class="error">', '</div>');  ?>
 				</div>
-               </div>
+               
                 <!-- /.box-body -->
-                <div class="box-footer text-center">
-                  <input type="submit" class="btn btn-primary" name="submit" id="btn" value="Submit" />
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                  <label>&nbsp;</label>
+                  <input type="submit" class="btn btn-primary form-control" name="submit" id="btn" value="Submit" />
+                </div>
                 </div>
 				 <!--</form>-->
                 <!-- /.box-footer -->

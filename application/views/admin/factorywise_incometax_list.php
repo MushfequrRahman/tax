@@ -66,7 +66,7 @@ div.scrollable-table-wrapper {
                   <th>SL</th>
                   
                   <th>Factory</th>
-                  <th>User ID</th>
+                  <th>Employee ID</th>
                   <th>Type</th>
                   <th>Name</th>
                   <th>Department</th>

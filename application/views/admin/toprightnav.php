@@ -24,7 +24,8 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               
-              <span class="hidden-xs"><?php echo $this->session->userdata('name');?></span>
+              <?php /*?><span class="hidden-xs"><?php echo $this->session->userdata('name');?></span><?php */?>
+              <span><?php echo $this->session->userdata('name');?></span>
             </a>
             <ul class="dropdown-menu">
               

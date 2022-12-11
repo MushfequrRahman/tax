@@ -38,28 +38,6 @@
     font-size: 12px;
   }
 
-  .fayellow {
-    color: #FF6;
-  }
-
-  .fared {
-    color: #900;
-  }
-
-  .faorange {
-    color: #F90;
-  }
-
-  div.scrollable-table-wrapper {
-    height: 500px;
-    overflow: auto;
-  }
-
-  .header {
-    position: sticky;
-    top: 0;
-  }
-
   .text-right-input {
     text-align: right;
     width: 100%;
@@ -70,6 +48,9 @@
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <div class="content-wrapper">
+      <section class="content-header">
+        <h1>Dashboard</h1>
+      </section>
       <section class="content">
         <div class="row">
           <div class="col-md-12">
@@ -91,14 +72,21 @@
                       <tbody>
                         <?php
                         $i = 1;
+                        $tti = 0;
                         foreach ($ul as $row) { ?>
                           <tr>
                             <td style="vertical-align:middle;"><?php echo $i++; ?></td>
                             <td style="vertical-align:middle;"><?php echo $row['fid']; ?></td>
                             <td style="vertical-align:middle;"><?php echo $row['ti']; ?></td>
                           </tr>
+                          <?php $tti += $row['ti']; ?>
+
                       </tbody>
                     <?php } ?>
+                    <tr>
+                      <td colspan="2" style="vertical-align:middle;"><strong>Total</strong></td>
+                      <td style="vertical-align:middle;"><strong><?php echo $tti; ?></strong></td>
+                    </tr>
                     </table>
                     <div class="box-header with-border">
                       <h3 class="box-title">Type Wise Total List</h3>
@@ -108,13 +96,14 @@
                         <tr>
                           <th>SL</th>
                           <th>Unit</th>
-                          <th>Type</th>
+                          <th>Employement Type</th>
                           <th>Total</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php
                         $i = 1;
+                        $ttypei = 0;
                         foreach ($tl as $row) { ?>
                           <tr>
                             <td style="vertical-align:middle;"><?php echo $i++; ?></td>
@@ -122,8 +111,14 @@
                             <td style="vertical-align:middle;"><?php echo $row['sname']; ?></td>
                             <td style="vertical-align:middle;"><?php echo $row['ttype']; ?></td>
                           </tr>
+
                       </tbody>
+                      <?php $ttypei += $row['ttype']; ?>
                     <?php } ?>
+                    <tr>
+                      <td colspan="3" style="vertical-align:middle;"><strong>Total</strong></td>
+                      <td style="vertical-align:middle;"><strong><?php echo $ttypei; ?></strong></td>
+                    <tr>
                     </table>
                   </div>
                 </div>
@@ -131,9 +126,8 @@
             </div>
           </div>
         </div>
+      </section>
     </div>
-    </section>
-  </div>
   </div>
 </body>
 

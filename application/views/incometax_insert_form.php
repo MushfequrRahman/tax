@@ -136,7 +136,7 @@
                     <div class="col-md-9 register-right">
                     	<div class="row">
                     		<div class="col-sm-9 col-md-11 col-xs-offset-1 col-md-offset-1">
-                    			<marquee behavior="scroll" direction="left" scrolldelay="200">Submit Your Tax Return Info Before January-31,2023</marquee>
+                    			<marquee behavior="scroll" direction="left" scrolldelay="200">Submit Your Tax Return Info Before February-28,2023</marquee>
                         	</div>
                         </div>
 
