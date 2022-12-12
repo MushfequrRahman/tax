@@ -32,7 +32,7 @@ class Home extends CI_Controller {
 			$dept=$this->form_validation->set_rules('dept', 'Department', 'required');
 			$desig=$this->form_validation->set_rules('desig', 'Designation', 'required');
 			$mobile=$this->form_validation->set_rules('mobile', 'Mobile', 'required|regex_match[/^[0-9]{11}$/]');
-			//$oemail=$this->form_validation->set_rules('oemail', 'Office Email', 'trim|required|valid_email');
+			$oemail=$this->form_validation->set_rules('oemail', 'Office Email', 'trim|valid_email');
 			$tin=$this->form_validation->set_rules('tin', 'TIN', 'required');
 			$tc=$this->form_validation->set_rules('tc', 'Tax Circle', 'required');
 			$tz=$this->form_validation->set_rules('tz', 'Tax Zone', 'required');
@@ -54,24 +54,34 @@ class Home extends CI_Controller {
 					$tid=$this->input->post('tid');
 					$userid=$this->input->post('userid');
 					$name=$this->input->post('name');
+					$name1 =  str_replace('.', ' ', $name);
 					$dept=$this->input->post('dept');
+					//$dept =  str_replace('.', ' ', $dept);
 					$desig=$this->input->post('desig');
+					//$desig =  str_replace('.', ' ', $desig);
 					$mobile=$this->input->post('mobile');
 					$oemail=$this->input->post('oemail');
 					$tin=$this->input->post('tin');
+					//$tin =  str_replace('.', ' ', $tin);
 					$tc=$this->input->post('tc');
+					//$tc =  str_replace('.', ' ', $tc);
 					$tz=$this->input->post('tz');
+					//$tz =  str_replace('.', ' ', $tz);
 					$rnumber=$this->input->post('rnumber');
+					//$rnumber =  str_replace('.', ' ', $rnumber);
 					
 					
 					$fyear=$this->input->post('fyear');      
-     				$remarks=$this->input->post('remarks'); 
+     				$remarks=$this->input->post('remarks');
+					//$remarks =  str_replace('.', ' ', $remarks); 
 					
 					$config['upload_path']          = APPPATH. '../assets/uploads/income_tax';
-					$config['allowed_types']        = 'jpg|jpeg|png';
+					$config['allowed_types']        = 'jpg|jpeg|png|';
 					$config['max_size']             = 100000;
+					$config['max_width'] = 150000;
+        			$config['max_height'] = 150000;
 					$rfile = $_FILES['rfile']['name'];
-					$rfile = $fid.'_'.$userid.'_'.$name.'_'.$fyear.pathinfo($rfile, PATHINFO_EXTENSION);
+					$rfile = $fid.'_'.$userid.'_'.$name1.'_'.$fyear.pathinfo($rfile, PATHINFO_EXTENSION);
 					$config['file_name'] = $rfile;
 					//$config['file_name']=$fid.$userid.$name.$fyear.$config['file_name'];
 					$config['file_name'] =  str_replace(' ', '_', $config['file_name']);

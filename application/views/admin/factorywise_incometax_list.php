@@ -35,6 +35,32 @@ div.scrollable-table-wrapper {
             position: sticky;
             top:0;
         }
+		.zoom {
+  /*padding: 50px;*/
+  
+  transition: transform .2s; /* Animation */
+ /* width: 200px;*/
+ /* height: 200px;
+  margin: 0 auto;*/
+}
+
+.zoom:hover {
+  transform: scale(3.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+@keyframes up-right {
+    0% {
+        transform: scale(1);
+        opacity: .25
+    }
+    50% {
+        transform: scale (1, 5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: .25;
+    }
+}
 </style>
 
                 <!-- /.box-header -->
@@ -108,7 +134,7 @@ div.scrollable-table-wrapper {
 				  	if($row['rfile']!='')
 					{
 						?>
-                  <td style="vertical-align:middle;"><img style="width:300px; height:300px;" src="<?php echo base_url().'assets/uploads/income_tax/'.$row['rfile'];?>" alt="Return File"><br/><strong><?php echo $row['rnumber'];?></strong></td>
+                  <td style="vertical-align:middle;"><img style="width:150px; height:150px;" class="zoom" src="<?php echo base_url().'assets/uploads/income_tax/'.$row['rfile'];?>" alt="Return File"><br/><strong><?php echo $row['rnumber'];?></strong></td>
                   <?php
 					}
 					else
