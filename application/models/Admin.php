@@ -20,7 +20,7 @@ class Admin extends CI_Model {
 	}
 	public function factory_list()
 	{
-		$query="SELECT * FROM factory";
+		$query="SELECT * FROM factory ORDER BY factoryname ASC";
 		$result=$this->db->query($query);
 		return $result->result_array();
 		
@@ -171,7 +171,7 @@ class Admin extends CI_Model {
 	{
 		$query="SELECT * FROM incometax_insert
 		JOIN type ON type.id=incometax_insert.type
-		WHERE fid='$factoryid' AND fyear='$fyear' ORDER BY userid";
+		WHERE fid='$factoryid' AND fyear='$fyear' ORDER BY CAST(userid as SIGNED INTEGER) ASC";
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
@@ -193,14 +193,14 @@ class Admin extends CI_Model {
 
 	public function factorywise_incometax_list_summary()
 	{
-		$query="SELECT fid,COUNT(fid) AS ti FROM incometax_insert WHERE fyear='2022-2023' GROUP BY fid";
+		$query="SELECT fid,COUNT(fid) AS ti FROM incometax_insert WHERE fyear='2022-2023' GROUP BY fid ORDER BY fid ASC";
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
 	public function typewise_incometax_list_summary()
 	{
 		$query="SELECT fid,sname,COUNT(type) AS ttype FROM incometax_insert
-		JOIN type ON type.id=incometax_insert.type WHERE fyear='2022-2023' GROUP BY type,fid";
+		JOIN type ON type.id=incometax_insert.type WHERE fyear='2022-2023' GROUP BY type,fid ORDER BY fid,type ASC";
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}

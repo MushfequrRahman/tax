@@ -136,7 +136,7 @@
                     <div class="col-md-9 register-right">
                     	<div class="row">
                     		<div class="col-sm-9 col-md-11 col-xs-offset-1 col-md-offset-1">
-                    			<marquee behavior="scroll" direction="left" scrolldelay="200">Submit Your Tax Return Info Before February-28,2023</marquee>
+                    			<!--<marquee behavior="scroll" direction="left" scrolldelay="200">Submit Your Tax Return Info Before February-28,2023</marquee>-->
                         	</div>
                         </div>
 
@@ -247,11 +247,13 @@
 										<?php echo form_error('cnumber', '<div class="error">', '</div>');  ?>
 									</div><?php */?>
 									<div class="form-group">
-										<label>Assesment Year</label>
+										<label>Assesment Year<em>*</em></label>
 										<select class="form-control" name="fyear" id="fyear">
-											<!--<option value="2020-2021">2020-2021</option>-->
+                                        	<option value="">Select....</option>
+											<option value="2021-2022">2021-2022</option>
 											<option value="2022-2023">2022-2023</option>
 										</select>
+                                        <?php echo form_error('fyear', '<div class="error">', '</div>');  ?>
 									</div>
                                     <div class="form-group">
 										<label>Remarks</label>

@@ -103,7 +103,7 @@ div.scrollable-table-wrapper {
                   <th>Tax Circle</th>
                   <th>Tax Zone</th>
                   <th>Acknowledgment Slip Number</th>
-                  <th>Submission Date</th>
+                  <th>Upload Date</th>
                   <th>Assesment Year</th>
                   <th>Remarks</th>
                   <!--<th>Edit</th>-->

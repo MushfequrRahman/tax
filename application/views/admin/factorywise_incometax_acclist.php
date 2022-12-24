@@ -78,7 +78,7 @@ div.scrollable-table-wrapper {
                   <th>Tax Zone</th>
                   <th>Acknowledgment Slip Number</th>
                   <!--<th>Challan Number</th>-->
-                  <th>Submission Date</th>
+                  <th>Upload Date</th>
                   <th>Assesment Year</th>
                   <th>Remarks</th>
                   <!--<th>Edit</th>-->
