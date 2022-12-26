@@ -276,11 +276,7 @@ class Dashboard extends CI_Controller {
 		$data['ul']=$this->Admin->user_list();
 		$this->load->view('admin/user_list',$data);
 	}
-	
-	 
-	 
-	 
-	 public function incometax_insert_form()
+	public function incometax_insert_form()
 	 {
 		$this->load->database();
 		$this->load->model('Admin');
@@ -291,9 +287,7 @@ class Dashboard extends CI_Controller {
 		$data['fl']=$this->Admin->factory_list();
 		$this->load->view('admin/incometax_insert_form',$data);
 	 }
-	 
-	
-	public function incometax_list()
+	 public function incometax_list()
 	 {
 		$this->load->database();
 		$this->load->model('Admin');
@@ -337,6 +331,30 @@ class Dashboard extends CI_Controller {
 		$data['ul']=$this->Admin->factorywise_incometax_list($factoryid,$fyear);
 		$this->load->view('admin/factorywise_incometax_acclist',$data);
 	 }
+	 public function unit_wise_summary()
+	 {
+		$this->load->database();
+		$this->load->model('Admin');
+		$data['title']='SBU Wise Summary List';
+		$this->load->view('admin/head',$data);
+		$this->load->view('admin/toprightnav');
+		$this->load->view('admin/leftmenu');
+		$data['fl']=$this->Admin->factory_list();
+		$data['fil']=$this->Admin->fiscal_year_list();
+		//$data['ul']=$this->Admin->unit_wise_summary();
+		$this->load->view('admin/unit_wise_summary',$data);
+	 }
+	 public function unit_wise_summary_list()
+	 {
+		$this->load->database();
+		$this->load->model('Admin');
+		$data['title']='Income Tax List';
+		$factoryid = $this->input->post('factoryid');
+		$fyear = $this->input->post('fyear');
+		$data['ul']=$this->Admin->factorywise_incometax_list_summary1($fyear);
+		$data['tl']=$this->Admin->typewise_incometax_list_summary1($fyear);
+		$this->load->view('admin/unit_wise_summary_list',$data);
+	 }
 	 public function incometax_list_up()
 	 {
 		$this->load->database();
@@ -377,22 +395,6 @@ class Dashboard extends CI_Controller {
 				
 		}
 	 }
-	 
-	
-	 
-	 
-	
-	
-	 
-	 
-	
-	
-	
-	
-	 
-	 
-	 
-	
 }
 
 

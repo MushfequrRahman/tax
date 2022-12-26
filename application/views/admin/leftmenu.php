@@ -91,24 +91,7 @@
             	</span>
           	</a>
           	<ul class="treeview-menu">
-            	
-            	
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <li class="treeview">
+            	<li class="treeview">
         			<a href="#">
             			<i class="fa fa-id-card" aria-hidden="true"></i> <span>Report</span>
             				<span class="pull-right-container">
@@ -117,7 +100,8 @@
           			</a>
           			<ul class="treeview-menu">
             			<li><a href="<?php echo base_url();?>Dashboard/incometax_list"><i class="fa fa-circle-o"></i>Tax List</a></li>
-                <li><a href="<?php echo base_url();?>Dashboard/incometax_acclist"><i class="fa fa-circle-o"></i>ACC Report</a></li>
+                		<li><a href="<?php echo base_url();?>Dashboard/incometax_acclist"><i class="fa fa-circle-o"></i>ACC Report</a></li>
+                        <li><a href="<?php echo base_url();?>Dashboard/unit_wise_summary"><i class="fa fa-circle-o"></i>Unit Wise Summary</a></li>
             		</ul>
         		</li>
             </ul>
@@ -144,24 +128,7 @@
             	</span>
           	</a>
           	<ul class="treeview-menu">
-            	
-            	
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <li class="treeview">
+            	<li class="treeview">
         			<a href="#">
             			<i class="fa fa-id-card" aria-hidden="true"></i> <span>Report</span>
             				<span class="pull-right-container">
@@ -170,7 +137,8 @@
           			</a>
           			<ul class="treeview-menu">
             			<li><a href="<?php echo base_url();?>Dashboard/incometax_list"><i class="fa fa-circle-o"></i>Tax List</a></li>
-                <li><a href="<?php echo base_url();?>Dashboard/incometax_acclist"><i class="fa fa-circle-o"></i>ACC Report</a></li>
+                		<li><a href="<?php echo base_url();?>Dashboard/incometax_acclist"><i class="fa fa-circle-o"></i>ACC Report</a></li>
+                        <li><a href="<?php echo base_url();?>Dashboard/unit_wise_summary"><i class="fa fa-circle-o"></i>Unit Wise Summary</a></li>
             		</ul>
         		</li>
             </ul>

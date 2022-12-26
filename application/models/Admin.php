@@ -204,6 +204,19 @@ class Admin extends CI_Model {
 		$result=$this->db->query($query);
 		return $result->result_array();
 	}
+	public function factorywise_incometax_list_summary1($fyear)
+	{
+		$query="SELECT fid,COUNT(fid) AS ti FROM incometax_insert WHERE fyear='$fyear' GROUP BY fid ORDER BY fid ASC";
+		$result=$this->db->query($query);
+		return $result->result_array();
+	}
+	public function typewise_incometax_list_summary1($fyear)
+	{
+		$query="SELECT fid,sname,COUNT(type) AS ttype FROM incometax_insert
+		JOIN type ON type.id=incometax_insert.type WHERE fyear='$fyear' GROUP BY type,fid ORDER BY fid,type ASC";
+		$result=$this->db->query($query);
+		return $result->result_array();
+	}
 	
 														
 }
